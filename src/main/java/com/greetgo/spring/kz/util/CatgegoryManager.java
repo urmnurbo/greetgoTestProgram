@@ -4,6 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.greetgo.spring.kz.bean.Category;
 import com.greetgo.spring.kz.mapper.CategoryMapper;
+import org.springframework.context.annotation.Bean;
 
 public class CatgegoryManager {
 	public static Category selectCategoryById(int id) {
@@ -17,7 +18,6 @@ public class CatgegoryManager {
 			sqlSession.close();
 		}
 	}
-	
 	public static void insertCategory(Category category){
 		SqlSession sqlSession = ConnectionFactory.getSqlSessionFactory()
 				.openSession();
